@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Help - SafetyHub</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="help.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rights.html">Know Your Rights</a></li>
+            <li><a href="help.html" class="active">Get Help</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="help-container">
+        <div class="help-card">
+
+            <div class="help-header">
+                <h2>Emergency Assistance</h2>
+                <p>Immediate resources and quick actions.</p>
+            </div>
+
+            <div class="urgent-grid">
+                <a href="tel:100" class="emergency-btn police-btn">
+                    <span class="icon">👮‍♂️</span>
+                    <div class="btn-text">
+                        <strong>Call Police</strong>
+                        <span>Dial 100</span>
+                    </div>
+                </a>
+
+                <a href="tel:1091" class="emergency-btn helpline-btn">
+                    <span class="icon">🆘</span>
+                    <div class="btn-text">
+                        <strong>Women's Helpline</strong>
+                        <span>Dial 1091</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="sos-section">
+                <div class="sos-header">
+                    <h3>📍 Share Location</h3>
+                    <p>Send your current coordinates to your trusted contacts.</p>
+                </div>
+
+                <div class="location-status" id="location-status">
+                    Status: <span>Waiting for action...</span>
+                </div>
+
+                <button id="sos-btn" class="btn-sos">
+                    ⚠️ SEND SOS ALERT
+                </button>
+                <p class="sos-note">*Requires you to be logged in with saved contacts.</p>
+            </div>
+
+            <hr class="divider">
+
+            <div class="directory-section">
+                <h3>Essential Directory</h3>
+                <div class="directory-list">
+                    <div class="dir-item">
+                        <span class="dir-icon">🚑</span>
+                        <div class="dir-info">
+                            <strong>Ambulance</strong>
+                            <span>102</span>
+                        </div>
+                        <a href="tel:102" class="call-link">Call</a>
+                    </div>
+
+                    <div class="dir-item">
+                        <span class="dir-icon">🚒</span>
+                        <div class="dir-info">
+                            <strong>Fire Brigade</strong>
+                            <span>101</span>
+                        </div>
+                        <a href="tel:101" class="call-link">Call</a>
+                    </div>
+
+                    <div class="dir-item">
+                        <span class="dir-icon">💻</span>
+                        <div class="dir-info">
+                            <strong>Cyber Crime Cell</strong>
+                            <span>1930</span>
+                        </div>
+                        <a href="tel:1930" class="call-link">Call</a>
+                    </div>
+
+                    <div class="dir-item">
+                        <span class="dir-icon">⚖️</span>
+                        <div class="dir-info">
+                            <strong>Legal Aid Authority</strong>
+                            <span>15100</span>
+                        </div>
+                        <a href="tel:15100" class="call-link">Call</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-section">
+                <h3>Write to Us</h3>
+                <p>For non-emergencies, legal queries, or support.</p>
+
+                <form id="support-form" class="professional-form">
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select id="subject">
+                            <option>General Inquiry</option>
+                            <option>Legal Advice Request</option>
+                            <option>Report a Bug</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea rows="3" placeholder="How can we help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="help.js"></script>
+
+</body>
+
+</html>

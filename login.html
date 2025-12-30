@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - SafetyHub</title>
+
+    <link rel="stylesheet" href="login.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="login-container">
+        <div class="login-card">
+
+            <div class="login-header">
+                <h2>Welcome Back</h2>
+                <p>Please enter your details to sign in.</p>
+            </div>
+
+            <form id="login-form" class="professional-form">
+
+                <div class="form-group">
+                    <div class="label-row">
+                    <label for="login-email">Email Address</label></div>
+                    <input type="email" id="login-email" placeholder="name@example.com" required>
+                    
+                </div>
+
+                <div class="form-group">
+                    <div class="label-row">
+                        <label for="login-pass">Password</label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <div class="password-wrapper">
+                        <input type="password" id="login-pass" placeholder="Enter your password" required>
+
+                        <svg class="toggle-password" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                            <circle cx="12" cy="12" r="3"></circle>
+                        </svg>
+                    </div>
+                </div>
+
+                <div id="error-msg" class="error-message"></div>
+
+                <button type="submit" class="btn-login">Sign In</button>
+
+                <p class="signup-link">
+                    Don't have an account yet?
+                    <a href="signup.html">Sign up for free</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

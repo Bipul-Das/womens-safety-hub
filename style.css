@@ -1,0 +1,597 @@
+/* =========================================
+   1. GLOBAL VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Color Palette */
+    --primary-color: #2c3e50;
+    /* Dark Blue (Text/Headers) */
+    --accent-color: #16a085;
+    /* Teal (Buttons/Highlights) */
+    --accent-dark: #0e6655;
+    /* Darker Teal for hover */
+    --danger-color: #e74c3c;
+    /* Red (Emergency) */
+    --light-bg: #f4f6f7;
+    /* Page Background */
+    --white: #ffffff;
+    --text-muted: #666;
+    --form-bg: rgba(140, 231, 224, 0.587);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Using Poppins for headings, Roboto for body text */
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-top: 70px;
+    /* Space for Fixed Navbar */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+main {
+    flex: 1;
+}
+
+/* Utility Classes */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-header-center h2 {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.section-header-center p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   2. FIXED NAVIGATION BAR
+   ========================================= */
+.navbar {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+/* Hover underline effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* Profile Avatar styling remains the same... */
+#auth-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-avatar {
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border: 2px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.nav-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nav-avatar:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Dropdown styling remains the same... */
+.profile-dropdown {
+    position: absolute;
+    top: 70px;
+    right: 5%;
+    background-color: var(--white);
+    width: 220px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.profile-dropdown.show-menu {
+    display: flex;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-item {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+    border-bottom: 1px solid #f4f6f7;
+    font-size: 0.9rem;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: var(--accent-color);
+}
+
+.logout-btn {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+.logout-btn:hover {
+    background-color: #fff5f5;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   3. HERO SECTION & BUTTONS
+   ========================================= */
+.hero {
+    /* Professional gradient background */
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 120px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    opacity: 0.9;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--accent-color);
+    padding: 15px 35px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    background-color: var(--accent-color);
+    color: var(--white);
+    border-color: var(--white);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   4. SAFETY FEATURES & EMERGENCY
+   ========================================= */
+#quick-exit {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4);
+    z-index: 9999;
+    transition: background 0.2s, transform 0.2s;
+}
+
+#quick-exit:hover {
+    background-color: #b71c1c;
+    transform: scale(1.05);
+}
+
+.emergency-panel {
+    background-color: #fff5f5;
+    border-bottom: 3px solid var(--danger-color);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.emergency-panel h2 {
+    color: var(--danger-color);
+    margin-bottom: 25px;
+}
+
+.emergency-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-danger {
+    background-color: var(--white);
+    color: var(--danger-color);
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid var(--danger-color);
+    transition: all 0.2s;
+}
+
+.btn-danger:hover {
+    background-color: var(--danger-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* =========================================
+   5. INFO CARDS
+   ========================================= */
+.info-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px 30px;
+    flex: 1;
+    min-width: 280px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    text-align: left;
+    border-bottom: 4px solid var(--accent-color);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-muted);
+}
+
+
+/* =========================================
+   6. NEW: ACHIEVEMENTS SECTION (Professional)
+   ========================================= */
+.achievements-section {
+    background-color: var(--primary-color);
+    /* Dark background for contrast */
+    color: var(--white);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.achievements-section .section-header-center h2 {
+    color: var(--white);
+}
+
+.achievements-section .section-header-center p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.achievements-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.achievement-item {
+    flex: 1;
+    min-width: 200px;
+}
+
+.achievement-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+/* The Animated Number */
+.counter {
+    font-family: 'Poppins', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.achievement-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   7. NEW: FAQ SECTION (Accordion)
+   ========================================= */
+.faq-section {
+    background-color: var(--white);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* The clickable question header */
+.faq-question {
+    width: 100%;
+    background-color: var(--white);
+    border: none;
+    padding: 20px 25px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+/* Active state for question header */
+.faq-question.active {
+    background-color: #f1f3f5;
+    color: var(--accent-color);
+}
+
+/* The arrow icon rotation */
+.faq-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active .faq-arrow {
+    transform: rotate(180deg);
+}
+
+/* The hidden answer panel */
+.faq-answer {
+    max-height: 0;
+    /* Hidden by default */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: var(--white);
+}
+
+.faq-answer p {
+    padding: 0 25px 25px 25px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   8. FOOTER
+   ========================================= */
+footer {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: auto;
+}
+
+.footer-logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.disclaimer {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .achievements-grid {
+        gap: 30px;
+    }
+
+    .counter {
+        font-size: 2.5rem;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+}
+
+
+/* Secondary Outline Button (Used for 'View All') */
+.btn-secondary-outline {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 2px solid red;
+    color: var(--primary-color);
+    background-color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-secondary-outline:hover {
+    background-color: rgb(55, 222, 197);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+/* Footer Links Styling */
+.footer-links {
+    margin: 15px 0;
+}
+
+.footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    opacity: 0.8;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    text-decoration: underline;
+    color: var(--accent-color);
+    /* Optional: Turn Teal on hover */
+}

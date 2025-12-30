@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - SafetyHub</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="faq.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rights.html">Know Your Rights</a></li>
+            <li><a href="help.html">Get Help</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="faq-page-container">
+        <div class="faq-card">
+
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about your safety and our features.</p>
+            </div>
+
+            <div class="search-box-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="faq-search" placeholder="Search for answers (e.g. 'SOS', 'Privacy', 'Login')...">
+            </div>
+
+            <div class="faq-list" id="faq-list">
+
+                <h3 class="faq-category-title">General Information</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is SafetyHub free to use?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. SafetyHub is a completely free initiative developed to ensure women's safety. All
+                            features, including SOS alerts, legal guides, and directory access, are free of charge.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do I need an internet connection?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>To view legal rights and directories, an internet connection is required. However, the SOS
+                            feature attempts to use SMS fallback if data is unavailable (functionality depends on
+                            browser permissions).</p>
+                    </div>
+                </div>
+
+                <h3 class="faq-category-title">Safety & SOS Features</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How does the SOS Alert work?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>When you click the "Send SOS" button, the app captures your current GPS coordinates and sends
+                            an alert message to your saved Emergency Contacts. You must be logged in and have contacts
+                            saved for this to work.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I add multiple emergency contacts?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. You can add up to 3 trusted contacts (e.g., parents, friends, siblings) in the
+                            "Emergency Contacts" page. You can also designate one as your Primary Contact.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the 'Quick Exit' button?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>The red 'Quick Exit' button is a safety feature designed for users in domestic violence
+                            situations. Clicking it instantly redirects the browser to Google, hiding the SafetyHub site
+                            immediately.</p>
+                    </div>
+                </div>
+
+                <h3 class="faq-category-title">Privacy & Account</h3>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is my location being tracked continuously?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>No. We respect your privacy. Your location is <strong>only</strong> accessed when you
+                            explicitly click the SOS button or use a location-based directory feature. We do not store
+                            your location history.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I delete my account?</span>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can permanently delete your account and all associated data by going to <strong>Settings
+                                > Danger Zone</strong> and clicking "Delete Account". This action cannot be undone.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="faq-footer-cta">
+                <p>Can't find what you're looking for?</p>
+                <a href="help.html" class="btn-support">Contact Support</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="faq.js"></script>
+
+</body>
+
+</html>

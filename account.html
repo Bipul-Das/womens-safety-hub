@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account - SafetyHub</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="account.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rights.html">Know Your Rights</a></li>
+            <li><a href="help.html">Get Help</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="account-container">
+
+        <aside class="account-sidebar">
+            <div class="sidebar-user-preview">
+                <div class="large-avatar" id="profile-avatar-large">U</div>
+
+                <h3 id="profile-name-display">User Name</h3>
+
+                <div class="photo-actions">
+                    <label for="photo-upload" class="action-btn change-btn" id="upload-label"
+                        title="Upload or Change Photo">
+                        📸 Upload
+                    </label>
+                    <input type="file" id="photo-upload" accept="image/*" style="display: none;">
+
+                    <button id="delete-photo-btn" class="action-btn delete-btn" title="Remove Photo">
+                        🗑️
+                    </button>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#general" class="sidebar-link active">👤 General Info</a>
+                <a href="emcon.html" class="sidebar-link">📞 Emergency Contacts</a>
+                <a href="security.html" class="sidebar-link">🔒 Security & Login</a>
+            </nav>
+        </aside>
+
+        <main class="account-content">
+
+            <section id="general-section" class="content-section">
+                <div class="section-header">
+                    <h2>General Information</h2>
+                    <p>Manage your personal details for emergency identification.</p>
+                </div>
+
+                <form id="general-form" class="professional-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="full-name">Full Name</label>
+                            <input type="text" id="full-name" placeholder="e.g. Sarah Jenkins">
+                        </div>
+                        <div class="form-group">
+                            <label for="display-email">Email Address</label>
+                            <input type="email" id="display-email" value="" readonly class="input-disabled"
+                                title="Email cannot be changed">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" placeholder="+1 234 567 8900">
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group" style="flex: 2;">
+                            <label for="address">Full Home Address</label>
+                            <input type="text" id="address" placeholder="Street, Apt, City, Zip Code">
+                        </div>
+                        <div class="form-group" style="flex: 1;">
+                            <label for="blood-group">Blood Group</label>
+                            <select id="blood-group">
+                                <option value="">Select...</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="save-general-btn">Save Changes</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="emergency-section" class="content-section">
+                <div class="section-header">
+                    <h2>Trusted Contacts</h2>
+                    <p>These contacts will be notified when you use the SOS feature.</p>
+                </div>
+
+                <form id="emergency-form" class="professional-form">
+
+                    <h4 class="contact-label">Contact 1 (Primary)</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="contact-1-name" placeholder="e.g. Mom">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="contact-1-phone" placeholder="Phone Number">
+                        </div>
+                    </div>
+
+                    <h4 class="contact-label">Contact 2</h4>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" id="contact-2-name" placeholder="e.g. Best Friend">
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" id="contact-2-phone" placeholder="Phone Number">
+                        </div>
+                    </div>
+
+                    <div id="extra-contact-container" style="display: none;">
+                        <h4 class="contact-label">Contact 3</h4>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input type="text" id="contact-3-name" placeholder="e.g. Sibling">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" id="contact-3-phone" placeholder="Phone Number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <button type="button" id="add-contact-btn" class="btn-secondary">
+                            ➕ Add Another Contact
+                        </button>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-primary" id="save-contacts-btn">Update Contacts</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Women's Safety Hub. Student Project.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="account.js"></script>
+
+</body>
+
+</html>

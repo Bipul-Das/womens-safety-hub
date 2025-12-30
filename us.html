@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About & Contact - SafetyHub</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="us.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="us.html" class="active">Contact Us</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-container">
+        <div class="contact-card">
+
+            <div class="page-header">
+                <h2>About the Developer</h2>
+                <p>Building technology for social impact and safety.</p>
+            </div>
+
+            <div class="profile-section">
+                <div class="dev-avatar">
+                    <img src="https://ui-avatars.com/api/?name=Dev+Profile&background=16a085&color=fff&size=150"
+                        alt="Developer">
+                </div>
+                <div class="dev-info">
+                    <h3>Student Developer</h3>
+                    <span class="role">Full Stack Web Developer</span>
+                    <p>Hello! I built <strong>SafetyHub</strong> as a final year project to help empower women with
+                        legal knowledge and emergency tools. My goal is to use code to solve real-world problems.</p>
+
+                    <div class="social-links">
+                        <a href="#" class="social-btn linkedin" title="LinkedIn">in</a>
+                        <a href="#" class="social-btn github" title="GitHub">git</a>
+                        <a href="mailto:developer@example.com" class="social-btn email" title="Email">✉️</a>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="form-section">
+                <h3>Get in Touch</h3>
+                <p>Have feedback about the app or want to collaborate?</p>
+
+                <form id="contact-us-form" class="professional-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" id="sender-name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" id="sender-email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <select id="sender-subject">
+                            <option>General Feedback</option>
+                            <option>Report a Bug</option>
+                            <option>Collaboration Inquiry</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea id="sender-message" rows="4" placeholder="Type your message here..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Women's Safety Hub. Student Project.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="us.js"></script>
+
+</body>
+
+</html>

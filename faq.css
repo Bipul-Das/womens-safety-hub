@@ -1,0 +1,277 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #16a085;
+    --accent-hover: #1abc9c;
+    --white: #ffffff;
+    --text-muted: #666;
+    --border-color: #e1e4e8;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--primary-color);
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding-top: 80px;
+    /* Space for navbar */
+
+    /* SAME PROFESSIONAL BACKGROUND */
+    background: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1920') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.75);
+    backdrop-filter: blur(3px);
+    z-index: -1;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   3. FAQ CONTAINER
+   ========================================= */
+.faq-page-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.faq-card {
+    background: var(--white);
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.faq-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.faq-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   4. SEARCH BAR
+   ========================================= */
+.search-box-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#faq-search {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 1rem;
+    background-color: #f9f9f9;
+    transition: all 0.2s;
+}
+
+#faq-search:focus {
+    background-color: var(--white);
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(22, 160, 133, 0.1);
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #999;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   5. FAQ ACCORDION LIST
+   ========================================= */
+.faq-category-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.faq-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+}
+
+.faq-item:hover {
+    border-color: #cbd5e0;
+}
+
+.faq-question {
+    width: 100%;
+    background: var(--white);
+    border: none;
+    padding: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    transition: background-color 0.2s;
+    font-family: 'Roboto', sans-serif;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+/* Active State */
+.faq-item.active .faq-question {
+    background-color: #e8f8f5;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+.toggle-icon {
+    font-size: 1.2rem;
+    font-weight: 300;
+    transition: transform 0.3s;
+}
+
+.faq-item.active .toggle-icon {
+    transform: rotate(45deg);
+}
+
+/* Hidden Answer */
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: var(--white);
+}
+
+.faq-answer p {
+    padding: 0 20px 20px 20px;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.faq-answer p:first-child {
+    padding-top: 15px;
+}
+
+/* =========================================
+   6. FOOTER CTA
+   ========================================= */
+.faq-footer-cta {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.faq-footer-cta p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.btn-support {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s;
+}
+
+.btn-support:hover {
+    background-color: #1a252f;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .faq-card {
+        padding: 25px;
+    }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Contacts - SafetyHub</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="emcon.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="account.html">My Account</a></li>
+            <li><a href="emcon.html" class="active">Emergency Contacts</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="emcon-container">
+
+        <div class="page-header">
+            <div class="header-text">
+                <h2>Trusted Contacts</h2>
+                <p>Manage the people who will be notified during an emergency.</p>
+            </div>
+            <button id="add-new-btn" class="btn-primary-action">
+                <span>+</span> Add New Contact
+            </button>
+        </div>
+
+        <div id="contacts-grid" class="contacts-grid">
+        </div>
+
+    </div>
+
+    <div id="contact-modal" class="modal-overlay">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modal-title">Add New Contact</h3>
+                <button id="close-modal" class="close-btn">&times;</button>
+            </div>
+
+            <form id="contact-form" class="professional-form">
+                <input type="hidden" id="contact-id">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="c-name" placeholder="e.g. John Doe" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Relationship</label>
+                        <select id="c-relation">
+                            <option value="Parent">Parent</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Spouse">Spouse</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Guardian">Guardian</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="c-phone" placeholder="+1 234 567 8900" required>
+                    </div>
+                </div>
+
+                <div class="form-check-modal">
+                    <input type="checkbox" id="c-primary">
+                    <label for="c-primary">Set as <strong>Primary Contact</strong> (First to be notified)</label>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="cancel-btn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Contact</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="emcon.js"></script>
+</body>
+
+</html>

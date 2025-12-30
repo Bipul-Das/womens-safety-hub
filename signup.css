@@ -1,0 +1,292 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --primary-color: #2c3e50;
+    --accent-color: #16a085;
+    --accent-hover: #1abc9c;
+    --white: #ffffff;
+    --text-muted: #666;
+    --border-color: #e1e4e8;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: var(--primary-color);
+}
+
+/* =========================================
+   2. LOCKED NAVBAR
+   ========================================= */
+.navbar {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    position: relative;
+}
+
+/* Hover underline effect */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent-color);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent-color);
+}
+
+/* =========================================
+   3. SIGNUP CONTAINER (Background)
+   ========================================= */
+.signup-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    padding-top: 80px;
+    /* Offset for navbar */
+
+    /* PROFESSIONAL BACKGROUND IMAGE (Different image to distinguish from login, same style) */
+    background: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+    position: relative;
+}
+
+/* Dark Overlay to make text pop */
+.signup-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(44, 62, 80, 0.65);
+    /* Dark blue overlay matching login */
+    backdrop-filter: blur(3px);
+}
+
+/* =========================================
+   4. SIGNUP CARD
+   ========================================= */
+.signup-card {
+    position: relative;
+    /* Sit above overlay */
+    background: var(--white);
+    width: 100%;
+    max-width: 450px;
+    /* Same width as login */
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.signup-header h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.8rem;
+    margin-bottom: 4px;
+    color: var(--primary-color);
+}
+
+.signup-header p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 22px;
+}
+
+/* =========================================
+   5. PROFESSIONAL FORM
+   ========================================= */
+.form-group {
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--primary-color);
+}
+
+/* Inputs (Exact values from Login) */
+input {
+    width: 100%;
+    padding: 5px 5px 12px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    background-color: #f9f9f9;
+}
+
+input:focus {
+    background-color: var(--white);
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.1);
+}
+
+/* Hide Edge Eye */
+input::-ms-reveal,
+input::-ms-clear {
+    display: none !important;
+}
+
+/* Ghost Eye Logic */
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    padding-right: 40px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+.password-wrapper:focus-within .toggle-password {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Terms Checkbox (Specific to Signup) */
+.form-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    justify-content: flex-start;
+    text-align: left;
+    margin-top: 15px;
+}
+
+.form-check input {
+    width: auto;
+    /* Reset width for checkbox */
+    margin: 0;
+}
+
+.form-check a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.form-check a:hover {
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-signup {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 10px;
+}
+
+.btn-signup:hover {
+    background-color: #1a252f;
+}
+
+/* Footer Link */
+.login-link {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.login-link a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* Error Message */
+.error-message {
+    background-color: #fce4e4;
+    color: #c0392b;
+    border: 1px solid #fadbd8;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    text-align: left;
+    margin-bottom: 7px;
+    margin-top: 13px;
+    display: none;
+}

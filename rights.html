@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Know Your Rights - SafetyHub</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="rights.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="rights.html" class="active">Know Your Rights</a></li>
+            <li><a href="help.html">Get Help</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="rights-container">
+        <div class="rights-card">
+
+            <div class="rights-header">
+                <h2>Legal Framework & Rights</h2>
+                <p>Simplified explanations of Indian laws designed to protect women.</p>
+            </div>
+
+            <div class="search-wrapper">
+                <input type="text" id="rights-search"
+                    placeholder="Search for a topic (e.g., 'Workplace', 'FIR', 'Domestic')...">
+                <span class="search-icon">🔍</span>
+            </div>
+
+            <div class="rights-list" id="rights-list">
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">🚓</span> Zero FIR & Right to Report
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> A woman can file an FIR at any police station, irrespective of the
+                            location of the incident. This is called a "Zero FIR".</p>
+                        <p><strong>Key Detail:</strong> The police cannot refuse to register your complaint citing
+                            jurisdiction. They must register it as '00' and transfer it to the concerned station later.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">🌙</span> No Arrest After Sunset
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> Under Section 46(4) of the CrPC, a woman cannot be arrested after
+                            sunset (6 PM) and before sunrise (6 AM).</p>
+                        <p><strong>Exception:</strong> If there is a serious crime, the police must get written
+                            permission from a Judicial Magistrate First Class, and a woman police officer must be
+                            present.</p>
+                    </div>
+                </div>
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">🏠</span> Domestic Violence Act (PWDVA)
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> The Protection of Women from Domestic Violence Act, 2005, covers
+                            not just physical abuse, but also verbal, emotional, economic, and sexual abuse.</p>
+                        <p><strong>Right to Residence:</strong> A woman has the right to live in the shared household,
+                            even if she does not own it. She cannot be evicted without legal procedure.</p>
+                    </div>
+                </div>
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">💼</span> Workplace Harassment (POSH)
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> The Sexual Harassment of Women at Workplace Act, 2013.</p>
+                        <p><strong>Requirement:</strong> Every organization with 10+ employees must have an Internal
+                            Complaints Committee (ICC) headed by a senior woman. You can file a written complaint to
+                            this committee within 3 months of the incident.</p>
+                    </div>
+                </div>
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">🤐</span> Right to Anonymity
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> Under Section 228A of the IPC, the identity of a victim of sexual
+                            offenses (like rape) cannot be disclosed by the media or police.</p>
+                        <p><strong>Protection:</strong> You have the right to record your statement in private, either
+                            at home or at a convenient place, in the presence of a woman police officer.</p>
+                    </div>
+                </div>
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">⚖️</span> Right to Free Legal Aid
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> Under the Legal Services Authorities Act, 1987, women are entitled
+                            to free legal aid irrespective of their income.</p>
+                        <p><strong>Detail:</strong> You can approach the District Legal Services Authority to get a free
+                            lawyer for filing cases or legal advice.</p>
+                    </div>
+                </div>
+
+                <div class="right-item">
+                    <button class="right-header">
+                        <div class="header-title">
+                            <span class="icon">🤱</span> Maternity Benefit Act
+                        </div>
+                        <span class="toggle-icon">+</span>
+                    </button>
+                    <div class="right-content">
+                        <p><strong>The Law:</strong> Women are entitled to 26 weeks of paid maternity leave for the
+                            first two children.</p>
+                        <p><strong>Protection:</strong> It is illegal for an employer to fire a woman because she is
+                            pregnant or taking maternity leave.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="download-section">
+                <button class="btn-download" onclick="alert('PDF Download Feature would start here.')">
+                    📥 Download Legal Guide (PDF)
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="rights.js"></script>
+
+</body>
+
+</html>

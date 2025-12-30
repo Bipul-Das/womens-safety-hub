@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security & Login - SafetyHub</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="security.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="account.html">My Account</a></li>
+            <li><a href="security.html" class="active">Security</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="security-container">
+        <div class="security-card">
+
+            <div class="page-header">
+                <h2>Login & Security</h2>
+                <p>Manage your password, connected devices, and account protection.</p>
+            </div>
+
+            <section class="security-section">
+                <div class="section-title">
+                    <span class="sec-icon">🔑</span>
+                    <h3>Change Password</h3>
+                </div>
+
+                <form id="password-form" class="professional-form">
+                    <div class="form-group">
+                        <label>Current Password</label>
+                        <input type="password" id="current-pass" placeholder="Enter current password">
+                    </div>
+
+                    <div class="form-group">
+                        <label>New Password</label>
+                        <input type="password" id="new-pass" placeholder="Enter new password">
+
+                        <div class="strength-meter">
+                            <div class="strength-bar" id="strength-bar"></div>
+                        </div>
+                        <p class="strength-text" id="strength-text">Password Strength: Weak</p>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm New Password</label>
+                        <input type="password" id="confirm-pass" placeholder="Repeat new password">
+                    </div>
+
+                    <div class="form-actions right-align">
+                        <a href="#" class="forgot-link-sm">Forgot password?</a>
+                        <button type="submit" class="btn-primary">Update Password</button>
+                    </div>
+                </form>
+            </section>
+
+            <hr class="divider">
+
+            <section class="security-section">
+                <div class="section-title">
+                    <span class="sec-icon">🛡️</span>
+                    <h3>Two-Factor Authentication (2FA)</h3>
+                </div>
+                <div class="two-factor-box">
+                    <div class="tf-info">
+                        <p>Add an extra layer of security. We’ll require a code in addition to your password when you
+                            log in.</p>
+                        <div class="status-badge off" id="2fa-status">Status: OFF</div>
+                    </div>
+                    <button id="toggle-2fa-btn" class="btn-outline">Enable 2FA</button>
+                </div>
+            </section>
+
+            <hr class="divider">
+
+            <section class="security-section">
+                <div class="section-title">
+                    <span class="sec-icon">📱</span>
+                    <h3>Where You're Logged In</h3>
+                </div>
+
+                <div class="device-list">
+
+                    <div class="device-item current">
+                        <div class="device-icon">💻</div>
+                        <div class="device-info">
+                            <h4>Windows PC - Chrome <span class="badge-active">This Device</span></h4>
+                            <p>Dhaka, Bangladesh • Active now</p>
+                        </div>
+                    </div>
+
+                    <div class="device-item" id="device-1">
+                        <div class="device-icon">📱</div>
+                        <div class="device-info">
+                            <h4>iPhone 14 - Safari</h4>
+                            <p>Dhaka, Bangladesh • 2 hours ago</p>
+                        </div>
+                        <button class="btn-text-danger" onclick="revokeDevice('device-1')">Log Out</button>
+                    </div>
+
+                    <div class="device-item" id="device-2">
+                        <div class="device-icon">📱</div>
+                        <div class="device-info">
+                            <h4>Android - SafetyHub App</h4>
+                            <p>Chittagong, Bangladesh • Yesterday</p>
+                        </div>
+                        <button class="btn-text-danger" onclick="revokeDevice('device-2')">Log Out</button>
+                    </div>
+
+                </div>
+            </section>
+
+            <hr class="divider">
+
+            <section class="security-section">
+                <div class="section-title">
+                    <span class="sec-icon">📜</span>
+                    <h3>Recent Login Activity</h3>
+                </div>
+                <div class="activity-log-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Event</th>
+                                <th>Date & Time</th>
+                                <th>Location</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="status-dot green"></span> Successful Login</td>
+                                <td>Oct 24, 2025, 4:30 PM</td>
+                                <td>192.168.1.1 (Dhaka)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot green"></span> Password Changed</td>
+                                <td>Oct 20, 2025, 10:15 AM</td>
+                                <td>192.168.1.1 (Dhaka)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="status-dot red"></span> Failed Attempt</td>
+                                <td>Oct 18, 2025, 09:00 PM</td>
+                                <td>203.112.4.5 (Unknown)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">SafetyHub</div>
+            <div class="footer-links">
+                <a href="about.html">About Project</a>
+                <a href="us.html">Contact Us</a>
+                <a href="faq.html">FAQ</a>
+            </div>
+            <p>&copy; 2025 Women's Safety Hub. Student Project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="security.js"></script>
+
+</body>
+
+</html>

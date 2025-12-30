@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Settings - SafetyHub</title>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="settings.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">SafetyHub</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="account.html">My Account</a></li>
+            <li><a href="help.html">Get Help</a></li>
+            <li><a href="login.html" id="auth-link">Login</a></li>
+        </ul>
+    </nav>
+
+    <div class="settings-container">
+        <div class="settings-card">
+
+            <div class="page-header">
+                <h2>Settings & Preferences</h2>
+                <p>Customize your safety experience and application behavior.</p>
+            </div>
+
+            <div class="settings-group">
+                <h3>🎨 App Appearance</h3>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="icon-box">🌙</div>
+                        <div class="text-content">
+                            <h4>Dark Mode</h4>
+                            <p>Switch to a dark theme for low-light environments.</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-darkmode">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="icon-box">🌐</div>
+                        <div class="text-content">
+                            <h4>Language</h4>
+                            <p>Select your preferred language for the interface.</p>
+                        </div>
+                    </div>
+                    <select class="setting-select" id="language-select">
+                        <option value="en">English (US)</option>
+                        <option value="hi">Hindi</option>
+                        <option value="es">Spanish</option>
+                        <option value="fr">French</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <h3>🔔 Notifications</h3>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="icon-box">🚨</div>
+                        <div class="text-content">
+                            <h4>Critical SOS Alerts</h4>
+                            <p>Receive override alerts even when phone is on silent.</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-sos" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="icon-box">📧</div>
+                        <div class="text-content">
+                            <h4>Email Notifications</h4>
+                            <p>Receive weekly safety reports and login alerts.</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-email" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <h3>🔒 Privacy & Location</h3>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="icon-box">📍</div>
+                        <div class="text-content">
+                            <h4>Live Location Sharing</h4>
+                            <p>Allow trusted contacts to see your location during SOS.</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-location" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="setting-item">
+                    <div class="setting-info">
+                        <div class="icon-box">🕵️‍♀️</div>
+                        <div class="text-content">
+                            <h4>Incognito Mode</h4>
+                            <p>Do not save search history or activity logs locally.</p>
+                        </div>
+                    </div>
+                    <label class="switch">
+                        <input type="checkbox" id="toggle-incognito">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-group">
+                <h3>🛡️ Security</h3>
+
+                <div class="setting-item clickable" onclick="alert('Redirecting to Password Change module...')">
+                    <div class="setting-info">
+                        <div class="icon-box">🔑</div>
+                        <div class="text-content">
+                            <h4>Change Password</h4>
+                            <p>Update your password regularly for safety.</p>
+                        </div>
+                    </div>
+                    <span class="arrow-icon">›</span>
+                </div>
+
+                <div class="setting-item clickable" onclick="alert('Two-Factor Authentication Setup...')">
+                    <div class="setting-info">
+                        <div class="icon-box">📱</div>
+                        <div class="text-content">
+                            <h4>Two-Factor Authentication</h4>
+                            <p>Add an extra layer of security to your account.</p>
+                        </div>
+                    </div>
+                    <span class="arrow-icon">›</span>
+                </div>
+            </div>
+
+            <div class="settings-group danger-zone">
+                <h3>⚠️ Danger Zone</h3>
+
+                <div class="setting-item no-border">
+                    <div class="setting-info">
+                        <div class="icon-box danger-icon">🗑️</div>
+                        <div class="text-content">
+                            <h4>Delete Account</h4>
+                            <p>Permanently remove your account and all data.</p>
+                        </div>
+                    </div>
+                    <button class="btn-danger-outline" id="delete-account-btn">Delete</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="settings.js"></script>
+</body>
+
+</html>
