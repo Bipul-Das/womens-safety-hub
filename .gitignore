@@ -137,3 +137,37 @@ dist
 # Vite logs files
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+
+# --- OS Files ---
+# Windows junk
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# macOS junk
+.DS_Store
+
+# --- Editor / IDE ---
+# VS Code settings
+.vscode/
+# IntelliJ/WebStorm
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+
+# --- Web Junk ---
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# --- Project Specific ---
+# If you ever use a package manager
+node_modules/
+dist/
+build/
+
+# Secret keys (Always ignore these!)
+.env
+.env.local
