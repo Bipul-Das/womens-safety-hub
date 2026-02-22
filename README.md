@@ -9,7 +9,7 @@
 ---
 
 ## 🔗 Live Demo
-### [👉 Click here to access the Safety Hub](https://<YOUR-USERNAME>.github.io/<REPO-NAME>/)
+### [👉 Click here to access the Safety Hub](https://Bipul-Das.github.io/womens-safety-hub/)
 
 ---
 
